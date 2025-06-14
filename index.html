@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeWhisperX Terminal</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+      overflow: hidden;
+    }
+    #terminal {
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #0f0;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { background-color: #0f0; }
+      51%, 100% { background-color: transparent; }
+    }
+    .menu {
+      margin-top: 30px;
+    }
+    .menu button {
+      background-color: #111;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-family: monospace;
+    }
+    .menu button:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <div class="menu">
+    <button onclick="alert('Opening Termux Tools...')">Termux Tools</button>
+    <button onclick="alert('Accessing Dark Web Tools...')">Dark Web</button>
+    <button onclick="alert('Loading AI Assistant...')">AI Assistant</button>
+    <button onclick="alert('WhatsApp: wa.me/91XXXXXXXXXX')">Contact WhatsApp</button>
+    <button onclick="alert('Telegram: t.me/CodeWhisperXBot')">Contact Telegram</button>
+  </div>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const lines = [
+      '$ Initializing CodeWhisperX Terminal...',
+      '$ Loading hacking modules: Termux, Python, Dark Web... ✅',
+      '$ Connecting to AI systems... ✅',
+      '$ Type help to begin your journey 👾'
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+      if (index >= lines.length) return;
+
+      const line = lines[index];
+      if (charIndex <= line.length) {
+        terminal.innerHTML = lines.slice(0, index).join('\n') + '\n' + line.slice(0, charIndex) + '<span class="cursor"></span>';
+        charIndex++;
+        setTimeout(typeLine, 50);
+      } else {
+        index++;
+        charIndex = 0;
+        setTimeout(typeLine, 400);
+      }
+    }
+
+    typeLine();
+  </script>
+</body>
+</html>
