@@ -1,0 +1,14 @@
+{
+  "name": "codewhisperx",
+  "version": "1.0.0",
+  "description": "Official Hacker-Style Website of CodeWhisperX",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static HTML project, no complex build step required.'",
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": ["hacker", "terminal", "codewhisperx"],
+  "author": "CodeWhisperX",
+  "license": "MIT"
+}
